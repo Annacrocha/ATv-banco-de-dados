@@ -34,7 +34,6 @@ namespace ATv_banco_de_dados
             lblCurso = new Label();
             lblTelefone = new Label();
             txtNome = new TextBox();
-            txtData = new TextBox();
             txtCurso = new TextBox();
             txtTelefone = new TextBox();
             btCadastro = new Button();
@@ -42,17 +41,18 @@ namespace ATv_banco_de_dados
             btEditar = new Button();
             btExcluir = new Button();
             btLimpar = new Button();
-            dataGridView1 = new DataGridView();
-            mtxbData = new MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvExibicao = new DataGridView();
+            txtDataNascimento = new MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvExibicao).BeginInit();
             SuspendLayout();
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(161, 42);
+            lblNome.Location = new Point(113, 25);
+            lblNome.Margin = new Padding(2, 0, 2, 0);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(65, 25);
+            lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             lblNome.Click += lblNome_Click;
@@ -60,63 +60,64 @@ namespace ATv_banco_de_dados
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.Location = new Point(52, 101);
+            lblData.Location = new Point(82, 61);
+            lblData.Margin = new Padding(2, 0, 2, 0);
             lblData.Name = "lblData";
-            lblData.Size = new Size(174, 25);
+            lblData.Size = new Size(74, 15);
             lblData.TabIndex = 1;
-            lblData.Text = "Data de nascimento:";
+            lblData.Text = "Nascimento:";
+            lblData.Click += lblData_Click;
             // 
             // lblCurso
             // 
             lblCurso.AutoSize = true;
-            lblCurso.Location = new Point(164, 175);
+            lblCurso.Location = new Point(115, 105);
+            lblCurso.Margin = new Padding(2, 0, 2, 0);
             lblCurso.Name = "lblCurso";
-            lblCurso.Size = new Size(62, 25);
+            lblCurso.Size = new Size(41, 15);
             lblCurso.TabIndex = 2;
             lblCurso.Text = "Curso:";
             // 
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(146, 250);
+            lblTelefone.Location = new Point(102, 150);
+            lblTelefone.Margin = new Padding(2, 0, 2, 0);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(81, 25);
+            lblTelefone.Size = new Size(55, 15);
             lblTelefone.TabIndex = 3;
             lblTelefone.Text = "Telefone:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(232, 36);
+            txtNome.Location = new Point(162, 22);
+            txtNome.Margin = new Padding(2);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(335, 31);
+            txtNome.Size = new Size(236, 23);
             txtNome.TabIndex = 4;
-            // 
-            // txtData
-            // 
-            txtData.Location = new Point(232, 101);
-            txtData.Name = "txtData";
-            txtData.Size = new Size(335, 31);
-            txtData.TabIndex = 5;
             // 
             // txtCurso
             // 
-            txtCurso.Location = new Point(232, 172);
+            txtCurso.Location = new Point(162, 103);
+            txtCurso.Margin = new Padding(2);
             txtCurso.Name = "txtCurso";
-            txtCurso.Size = new Size(335, 31);
+            txtCurso.Size = new Size(236, 23);
             txtCurso.TabIndex = 6;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(232, 250);
+            txtTelefone.Location = new Point(162, 150);
+            txtTelefone.Margin = new Padding(2);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(335, 31);
+            txtTelefone.Size = new Size(236, 23);
             txtTelefone.TabIndex = 7;
             // 
             // btCadastro
             // 
-            btCadastro.Location = new Point(29, 329);
+            btCadastro.Location = new Point(20, 197);
+            btCadastro.Margin = new Padding(2);
             btCadastro.Name = "btCadastro";
-            btCadastro.Size = new Size(112, 34);
+            btCadastro.Size = new Size(78, 20);
             btCadastro.TabIndex = 8;
             btCadastro.Text = "Cadastrar";
             btCadastro.UseVisualStyleBackColor = true;
@@ -124,64 +125,74 @@ namespace ATv_banco_de_dados
             // 
             // btListar
             // 
-            btListar.Location = new Point(186, 329);
+            btListar.Location = new Point(130, 197);
+            btListar.Margin = new Padding(2);
             btListar.Name = "btListar";
-            btListar.Size = new Size(112, 34);
+            btListar.Size = new Size(78, 20);
             btListar.TabIndex = 9;
             btListar.Text = "Listar";
             btListar.UseVisualStyleBackColor = true;
+            btListar.Click += btListar_Click;
             // 
             // btEditar
             // 
-            btEditar.Location = new Point(346, 329);
+            btEditar.Location = new Point(242, 197);
+            btEditar.Margin = new Padding(2);
             btEditar.Name = "btEditar";
-            btEditar.Size = new Size(112, 34);
+            btEditar.Size = new Size(78, 20);
             btEditar.TabIndex = 10;
             btEditar.Text = "Editar";
             btEditar.UseVisualStyleBackColor = true;
+            btEditar.Click += btEditar_Click;
             // 
             // btExcluir
             // 
-            btExcluir.Location = new Point(498, 329);
+            btExcluir.Location = new Point(349, 197);
+            btExcluir.Margin = new Padding(2);
             btExcluir.Name = "btExcluir";
-            btExcluir.Size = new Size(112, 34);
+            btExcluir.Size = new Size(78, 20);
             btExcluir.TabIndex = 11;
             btExcluir.Text = "Excluir";
             btExcluir.UseVisualStyleBackColor = true;
             // 
             // btLimpar
             // 
-            btLimpar.Location = new Point(652, 329);
+            btLimpar.Location = new Point(456, 197);
+            btLimpar.Margin = new Padding(2);
             btLimpar.Name = "btLimpar";
-            btLimpar.Size = new Size(112, 34);
+            btLimpar.Size = new Size(78, 20);
             btLimpar.TabIndex = 12;
             btLimpar.Text = "Limpar";
             btLimpar.UseVisualStyleBackColor = true;
+            btLimpar.Click += btLimpar_Click;
             // 
-            // dataGridView1
+            // dgvExibicao
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 369);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(735, 203);
-            dataGridView1.TabIndex = 13;
+            dgvExibicao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExibicao.Location = new Point(20, 227);
+            dgvExibicao.Margin = new Padding(2);
+            dgvExibicao.Name = "dgvExibicao";
+            dgvExibicao.RowHeadersWidth = 62;
+            dgvExibicao.Size = new Size(514, 152);
+            dgvExibicao.TabIndex = 13;
+            //dgvExibicao.CellContentClick += dgvExibicao_CellContentClick;
+            dgvExibicao.CellDoubleClick += dgvExibicao_CellDoubleClick;
             // 
-            // mtxbData
+            // txtDataNascimento
             // 
-            mtxbData.Location = new Point(232, 101);
-            mtxbData.Name = "mtxbData";
-            mtxbData.Size = new Size(268, 31);
-            mtxbData.TabIndex = 14;
-            mtxbData.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            txtDataNascimento.Location = new Point(162, 61);
+            txtDataNascimento.Mask = "00/00/0000";
+            txtDataNascimento.Name = "txtDataNascimento";
+            txtDataNascimento.Size = new Size(236, 23);
+            txtDataNascimento.TabIndex = 14;
             // 
             // Cadastro
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 584);
-            Controls.Add(mtxbData);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(560, 399);
+            Controls.Add(txtDataNascimento);
+            Controls.Add(dgvExibicao);
             Controls.Add(btLimpar);
             Controls.Add(btExcluir);
             Controls.Add(btEditar);
@@ -189,17 +200,33 @@ namespace ATv_banco_de_dados
             Controls.Add(btCadastro);
             Controls.Add(txtTelefone);
             Controls.Add(txtCurso);
-            Controls.Add(txtData);
             Controls.Add(txtNome);
             Controls.Add(lblTelefone);
             Controls.Add(lblCurso);
             Controls.Add(lblData);
             Controls.Add(lblNome);
+            Margin = new Padding(2);
             Name = "Cadastro";
             Text = "Cadastro de Alunos";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Cadastro_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvExibicao).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void dgvExibicao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void lblData_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btLimpar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void lblNome_Click(object sender, EventArgs e)
@@ -215,6 +242,12 @@ namespace ATv_banco_de_dados
         private Label lblTelefone;
         private TextBox txtNome;
         private TextBox txtData;
+
+        public Cadastro(TextBox txtData)
+        {
+            this.txtData = txtData;
+        }
+
         private TextBox txtCurso;
         private TextBox txtTelefone;
         private Button btCadastro;
@@ -222,7 +255,7 @@ namespace ATv_banco_de_dados
         private Button btEditar;
         private Button btExcluir;
         private Button btLimpar;
-        private DataGridView dataGridView1;
-        private MaskedTextBox mtxbData;
+        private DataGridView dgvExibicao;
+        private MaskedTextBox txtDataNascimento;
     }
 }

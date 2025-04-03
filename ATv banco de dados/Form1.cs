@@ -38,7 +38,8 @@ namespace ATv_banco_de_dados
                     if (registro > 0)
                     {
                         MessageBox.Show("Login realizado com sucesso!");
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("Usuário ou senha incorretos!");
                     }
@@ -56,5 +57,11 @@ namespace ATv_banco_de_dados
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cadastro telaCadastro = new Cadastro();
+            telaCadastro.Show();
+            this.Hide();
+        }
     }
 }
